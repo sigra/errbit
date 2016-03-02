@@ -75,7 +75,7 @@
   - if @notice.user_attributes.present?
     #user_attributes
       %h3 User
-      = render 'notices/user_attributes', :user => @notice.user_attributes
+      = render 'notices/user_attributes', :user => @notice.user_attributes, :notice => @notice
 
   #environment
     %h3 Environment

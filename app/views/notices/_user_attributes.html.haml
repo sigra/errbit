@@ -7,3 +7,10 @@
       %tr
         %th= key
         %td= auto_link(auto_link(value.to_s, :urls, :target => "_blank"), :email_addresses).html_safe
+    - if user['id'].present? || user[:id].present?
+      %tr
+        %th Залогиниться под юзверем
+        %td
+          - if notice.server_environment
+            - link = "#{notice.server_environment["hostname"]}/login/as/another/user/#{user['id'] || user[:id]}"
+            = link_to 'Login as user', link, target: '_blank'
