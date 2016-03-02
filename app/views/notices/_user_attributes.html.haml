@@ -12,5 +12,5 @@
         %th Залогиниться под юзверем
         %td
           - if notice.server_environment
-            - link = "#{notice.server_environment["hostname"]}/login/as/another/user/#{user['id'] || user[:id]}"
+            - link = "http://#{notice.server_environment["hostname"]}/login/as/another/user/#{user['id'] || user[:id]}"
             = link_to 'Login as user', link, target: '_blank'
